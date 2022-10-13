@@ -6,7 +6,7 @@
  by Scott Fitzgerald
  http://www.arduino.cc/en/Tutorial/Knob
 
-Bagusm lanjutkan.
+Bagus lanjutkan.
 
 */
 
