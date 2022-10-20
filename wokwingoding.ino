@@ -10,8 +10,6 @@ Bagus lanjutkan.
 
 */
 
-# masih dalam perbaikan server
-
 #include <Servo.h>
 
 Servo myservo;  // create servo object to control a servo
