@@ -1,43 +1,20 @@
-// Refrensi Engodingan Ebook arduino
-// include the library code:
-#include <LiquidCrystal.h>
-//Pin ini disesuaikan dengan Skema dan tabel diatas.
-LiquidCrystal lcd(6, 7, 9, 10, 11, 12);
-int thisChar = 'a';
-void setup() {
-// set up the LCD's number of columns and rows:
-lcd.begin(16, 2);
-// turn on the cursor:
-lcd.cursor();
-}
-void loop() {
-// print the character
-lcd.write(thisChar);
-// wait a second:
-delay(1000);
-// Cetak karakter dari a sampai z
-thisChar++;
-// tulis karakter dari kanan ke kiri ketika karakter = 'k'
-if (thisChar == 'k') {
-//posisi kursor dimulai pada kolom 10, baris ke 2
-lcd.setCursor(9,1);
-//mulai menulis dari kanan ke kiri
-lcd.rightToLeft();
-}
-//Tulis karakter dari kiri ke kanan, ketika karakter = 'u'
-if (thisChar == 'u') {
-//posisi dimulai pada kolom 11 baris 1.
-lcd.setCursor(10,0);
-//Mulai menulis dari kiri ke kanan
-lcd.leftToRight();
-}
-// reset at 'z':
-if (thisChar > 'z') {
-//Membersihkan LCD
-lcd.clear();
-// go to (0,0):
-lcd.home();
-//Mulai lagi dari awal
-thisChar = 'a';
-}
+/*
+ Program Animasi LED dengan PWM
+*/
+#define LED 3 
+void setup() { 
+  // mendefinikasi pin LED sebagai output 
+  pinMode(LED, OUTPUT);
+} 
+void loop() { 
+ for ( byte value = 0; value < 255; value++)
+  {
+  analogWrite(LED,value);
+  delay(10); 
+  }
+for ( byte value = 255; value > 0; value--) 
+ { 
+ analogWrite(LED,value);
+ delay(10); 
+ }
 }
